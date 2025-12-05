@@ -1,0 +1,2 @@
+/usr/bin/ar qc libveekay.a CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o CMakeFiles/veekay.dir/src/veekay/input.cpp.o CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o
+/usr/bin/ranlib libveekay.a

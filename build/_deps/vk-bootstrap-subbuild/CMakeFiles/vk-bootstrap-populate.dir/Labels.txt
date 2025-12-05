@@ -1,0 +1,14 @@
+# Target labels
+ vk-bootstrap-populate
+# Source files and their labels
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate-complete.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-build.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-configure.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-download.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-install.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-mkdir.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-patch.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-test.rule
+/home/ivan/CG/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-update.rule
