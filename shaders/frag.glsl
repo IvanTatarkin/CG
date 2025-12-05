@@ -12,6 +12,7 @@ layout(binding = 0) uniform UniformBufferObject {
     mat4 view;
     mat4 projection;
     mat4 normalMatrix;
+    mat4 lightViewProj;
     vec4 cameraPos;
     vec4 ambientColor;   // rgb + intensity in w
 } ubo;
@@ -50,6 +51,24 @@ layout(binding = 5) uniform LightCounts {
 } lightCounts;
 
 layout(binding = 6) uniform sampler2D texSampler;
+layout(binding = 7) uniform sampler2D shadowMap;
+
+float sampleShadow(vec4 lightSpacePos, vec3 N, vec3 L) {
+    vec3 projCoords = lightSpacePos.xyz / lightSpacePos.w;
+    projCoords = projCoords * 0.5 + 0.5;
+    if (projCoords.z > 1.0) return 0.0;
+    float bias = max(0.0015 * (1.0 - dot(N, L)), 0.001);
+    float shadow = 0.0;
+    vec2 texel = 1.0 / vec2(textureSize(shadowMap, 0));
+    for (int x = -1; x <= 1; ++x) {
+        for (int y = -1; y <= 1; ++y) {
+            float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texel).r;
+            shadow += projCoords.z - bias > pcfDepth ? 1.0 : 0.0;
+        }
+    }
+    shadow /= 9.0;
+    return shadow;
+}
 
 vec3 blinnPhong(vec3 N, vec3 V, vec3 L, float intensity, vec3 lightColor) {
     float diff = max(dot(N, L), 0.0);
@@ -69,7 +88,8 @@ void main() {
 
     // Directional light
     vec3 Ld = normalize(-dirLight.directionIntensity.xyz);
-    color += blinnPhong(N, V, Ld, dirLight.directionIntensity.w, dirLight.color.rgb);
+    float shadow = sampleShadow(ubo.lightViewProj * vec4(fragPos, 1.0), N, Ld);
+    color += (1.0 - shadow) * blinnPhong(N, V, Ld, dirLight.directionIntensity.w, dirLight.color.rgb);
 
     // Point lights
     int pc = lightCounts.counts.x;

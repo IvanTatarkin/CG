@@ -117,7 +117,7 @@ int veekay::run(const veekay::ApplicationInfo& app_info) {
 	{ // NOTE: Initialize Vulkan: grab device and create swapchain
 		vkb::InstanceBuilder instance_builder;
 
-		auto builder_result = instance_builder.require_api_version(1, 2, 0)
+		auto builder_result = instance_builder.require_api_version(1, 3, 0)
 		                                      .request_validation_layers()
 		                                      .use_default_debug_messenger()
 		                                      .build();
@@ -158,6 +158,12 @@ int veekay::run(const veekay::ApplicationInfo& app_info) {
 
 		{
 			vkb::DeviceBuilder device_builder(physical_device);
+
+			VkPhysicalDeviceDynamicRenderingFeatures dyn_rendering{
+				.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES,
+				.dynamicRendering = VK_TRUE,
+			};
+			device_builder.add_pNext(&dyn_rendering);
 
 			auto result = device_builder.build();
 

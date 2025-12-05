@@ -981,6 +981,7 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/range_access.h \
   /usr/include/c++/11/bits/vector.tcc \
+  ../include/cylinder_generator.h \
   ../include/camera.h \
   /usr/include/glm/gtc/matrix_transform.hpp \
   /usr/include/glm/ext/matrix_projection.hpp \
