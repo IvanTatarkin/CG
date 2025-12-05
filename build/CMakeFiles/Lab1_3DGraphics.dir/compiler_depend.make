@@ -1163,6 +1163,28 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/filesystem \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/bits/fs_path.h \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/codecvt \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_ops.h \
   ../third_party/imgui/imgui.h \
   ../third_party/imgui/imconfig.h
 
@@ -1765,6 +1787,30 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 ../third_party/imgui/imgui.h:
 
+/usr/include/c++/11/bits/fs_dir.h:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/c++/11/ext/concurrence.h:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/c++/11/bits/locale_conv.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/usr/include/libintl.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/c++/11/sstream:
+
 /usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
@@ -1856,6 +1902,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/c++/11/tuple:
 
 /usr/include/c++/11/bits/invoke.h:
+
+/usr/include/c++/11/codecvt:
 
 /usr/include/string.h:
 
@@ -1961,7 +2009,11 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/c++/11/bits/ios_base.h:
 
+/usr/include/c++/11/locale:
+
 /usr/include/ctype.h:
+
+/usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/cctype:
 
@@ -2089,6 +2141,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/c++/11/tr1/exp_integral.tcc:
 
+/usr/include/c++/11/bits/sstream.tcc:
+
 /usr/include/c++/11/climits:
 
 /usr/include/c++/11/new:
@@ -2116,6 +2170,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/glm/ext/scalar_constants.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
 ../include/veekay/application.hpp:
 
@@ -2225,6 +2281,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
+/usr/include/c++/11/bits/fs_path.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/glm/gtc/constants.inl:
@@ -2260,6 +2318,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 ../include/camera.h:
+
+/usr/include/c++/11/bits/fs_fwd.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
@@ -2371,6 +2431,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/c++/11/bits/concept_check.h:
 
+/usr/include/c++/11/filesystem:
+
 /usr/include/glm/ext/vector_relational.hpp:
 
 /usr/include/glm/ext/vector_float2_precision.hpp:
@@ -2471,6 +2533,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/glm/ext/matrix_double2x3.hpp:
 
+/usr/include/c++/11/bits/shared_ptr.h:
+
 /usr/include/c++/11/bits/stl_construct.h:
 
 /usr/include/glm/ext/scalar_int_sized.hpp:
@@ -2568,6 +2632,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/glm/ext/vector_bool3.hpp:
 
 /usr/include/glm/matrix.hpp:
+
+/usr/include/c++/11/bits/fs_ops.h:
 
 /usr/include/glm/detail/type_vec2.hpp:
 

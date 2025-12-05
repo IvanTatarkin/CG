@@ -12,6 +12,9 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <filesystem>
+#include <limits>
 #include <imgui.h>
 
 struct UniformBufferObject {
@@ -50,6 +53,77 @@ struct LightCounts {
 
 constexpr uint32_t kMaxPointLights = 8;
 constexpr uint32_t kMaxSpotLights = 4;
+constexpr const char* kDefaultTexturePath = "textures/owl.ppm";
+
+struct TextureData {
+    uint32_t width = 0;
+    uint32_t height = 0;
+    std::vector<uint32_t> pixels; // RGBA8
+};
+
+static TextureData loadPPM(const std::filesystem::path& path) {
+    TextureData out;
+    std::ifstream file(path, std::ios::binary);
+    if (!file.is_open()) {
+        throw std::runtime_error("Failed to open texture file");
+    }
+    std::string magic;
+    file >> magic;
+    if (magic != "P6" && magic != "P3") {
+        throw std::runtime_error("PPM must be P6 or P3");
+    }
+    // Skip comments
+    char c;
+    file.get(c);
+    while (file.peek() == '#') {
+        file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+    file >> out.width >> out.height;
+    int maxval;
+    file >> maxval;
+    if (maxval != 255) {
+        throw std::runtime_error("Only maxval=255 supported");
+    }
+
+    std::vector<uint8_t> rgb;
+    rgb.resize(static_cast<size_t>(out.width) * out.height * 3);
+
+    if (magic == "P6") {
+        file.get(c); // consume single whitespace
+        size_t count = rgb.size();
+        file.read(reinterpret_cast<char*>(rgb.data()), count);
+    } else { // P3 ascii
+        for (size_t i = 0; i < rgb.size(); ++i) {
+            int v;
+            file >> v;
+            rgb[i] = static_cast<uint8_t>(v);
+        }
+    }
+
+    out.pixels.resize(static_cast<size_t>(out.width) * out.height);
+    for (size_t i = 0; i < out.width * out.height; ++i) {
+        uint8_t r = rgb[i * 3 + 0];
+        uint8_t g = rgb[i * 3 + 1];
+        uint8_t b = rgb[i * 3 + 2];
+        out.pixels[i] = (0xFFu << 24) | (static_cast<uint32_t>(b) << 16) | (static_cast<uint32_t>(g) << 8) | static_cast<uint32_t>(r);
+    }
+    return out;
+}
+
+static TextureData makeFallbackChecker(uint32_t w = 256, uint32_t h = 256, uint32_t tile = 32) {
+    TextureData out;
+    out.width = w;
+    out.height = h;
+    out.pixels.resize(static_cast<size_t>(w) * h);
+    for (uint32_t y = 0; y < h; ++y) {
+        for (uint32_t x = 0; x < w; ++x) {
+            bool dark = ((x / tile) + (y / tile)) % 2 == 0;
+            uint8_t c = dark ? 50 : 200;
+            out.pixels[y * w + x] = (0xFFu << 24) | (static_cast<uint32_t>(c) << 16) | (static_cast<uint32_t>(c) << 8) | c;
+        }
+    }
+    return out;
+}
 
 static struct {
     std::vector<Vertex> sphereVertices;
@@ -78,6 +152,8 @@ static struct {
     VkPipeline wireframePipeline = VK_NULL_HANDLE;
     VkDescriptorPool descriptorPool = VK_NULL_HANDLE;
     VkDescriptorSet descriptorSet = VK_NULL_HANDLE;
+    veekay::graphics::Texture* texture = nullptr;
+    VkSampler textureSampler = VK_NULL_HANDLE;
     Camera camera;
     float sphereRotationY = 0.0f;
     float sphereRotationX = 0.0f;
@@ -183,7 +259,7 @@ void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyF
     vkBindBufferMemory(veekay::app.vk_device, buffer, bufferMemory, 0);
 }
 
-void init(VkCommandBuffer /*cmd*/) {
+void init(VkCommandBuffer cmd) {
     std::cout << "Initializing application..." << std::endl;
     
     // Генерация сферы (возвращаем как в исходной версии)
@@ -252,6 +328,47 @@ void init(VkCommandBuffer /*cmd*/) {
     createBuffer(countBufferSize, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
                  VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
                  app_state.lightCountBuffer, app_state.lightCountBufferMemory);
+
+    // === Texture ===
+    TextureData texData;
+    try {
+        if (std::filesystem::exists(kDefaultTexturePath)) {
+            texData = loadPPM(kDefaultTexturePath);
+        } else if (std::filesystem::exists("textures/checker.ppm")) {
+            texData = loadPPM("textures/checker.ppm");
+        } else {
+            texData = makeFallbackChecker();
+        }
+    } catch (...) {
+        texData = makeFallbackChecker();
+    }
+    app_state.texture = new veekay::graphics::Texture(
+        cmd,
+        texData.width,
+        texData.height,
+        VK_FORMAT_R8G8B8A8_UNORM,
+        texData.pixels.data()
+    );
+
+    VkSamplerCreateInfo samplerInfo{};
+    samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
+    samplerInfo.magFilter = VK_FILTER_LINEAR;
+    samplerInfo.minFilter = VK_FILTER_LINEAR;
+    samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+    samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+    samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+    samplerInfo.anisotropyEnable = VK_FALSE;
+    samplerInfo.maxAnisotropy = 1.0f;
+    samplerInfo.borderColor = VK_BORDER_COLOR_INT_OPAQUE_BLACK;
+    samplerInfo.unnormalizedCoordinates = VK_FALSE;
+    samplerInfo.compareEnable = VK_FALSE;
+    samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
+    samplerInfo.mipLodBias = 0.0f;
+    samplerInfo.minLod = 0.0f;
+    samplerInfo.maxLod = 0.0f;
+    if (vkCreateSampler(veekay::app.vk_device, &samplerInfo, nullptr, &app_state.textureSampler) != VK_SUCCESS) {
+        throw std::runtime_error("failed to create texture sampler!");
+    }
     
     app_state.vertexShaderModule = loadShaderModule("shaders/vert.spv");
     app_state.fragmentShaderModule = loadShaderModule("shaders/frag.spv");
@@ -262,7 +379,7 @@ void init(VkCommandBuffer /*cmd*/) {
         return;
     }
     
-    std::array<VkDescriptorSetLayoutBinding, 6> layoutBindings{};
+    std::array<VkDescriptorSetLayoutBinding, 7> layoutBindings{};
     // Binding 0: matrices + camera/ambient
     layoutBindings[0].binding = 0;
     layoutBindings[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
@@ -293,6 +410,11 @@ void init(VkCommandBuffer /*cmd*/) {
     layoutBindings[5].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
     layoutBindings[5].descriptorCount = 1;
     layoutBindings[5].stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+    // Binding 6: texture sampler
+    layoutBindings[6].binding = 6;
+    layoutBindings[6].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    layoutBindings[6].descriptorCount = 1;
+    layoutBindings[6].stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
 
     VkDescriptorSetLayoutCreateInfo layoutInfo{};
     layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
@@ -332,7 +454,7 @@ void init(VkCommandBuffer /*cmd*/) {
     bindingDescription.stride = sizeof(Vertex);
     bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
     
-    std::array<VkVertexInputAttributeDescription, 3> attributeDescriptions{};
+    std::array<VkVertexInputAttributeDescription, 4> attributeDescriptions{};
     attributeDescriptions[0].binding = 0;
     attributeDescriptions[0].location = 0;
     attributeDescriptions[0].format = VK_FORMAT_R32G32B32_SFLOAT;
@@ -347,6 +469,11 @@ void init(VkCommandBuffer /*cmd*/) {
     attributeDescriptions[2].location = 2;
     attributeDescriptions[2].format = VK_FORMAT_R32G32B32_SFLOAT;
     attributeDescriptions[2].offset = offsetof(Vertex, color);
+    
+    attributeDescriptions[3].binding = 0;
+    attributeDescriptions[3].location = 3;
+    attributeDescriptions[3].format = VK_FORMAT_R32G32_SFLOAT;
+    attributeDescriptions[3].offset = offsetof(Vertex, texCoord);
     
     VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
     vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -449,11 +576,13 @@ void init(VkCommandBuffer /*cmd*/) {
         throw std::runtime_error("failed to create wireframe pipeline!");
     }
     
-    std::array<VkDescriptorPoolSize, 2> poolSizes{};
+    std::array<VkDescriptorPoolSize, 3> poolSizes{};
     poolSizes[0].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
     poolSizes[0].descriptorCount = 4; // ubo + material + dir light + counts
     poolSizes[1].type = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER;
     poolSizes[1].descriptorCount = 2; // point + spot
+    poolSizes[2].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[2].descriptorCount = 1;
     
     VkDescriptorPoolCreateInfo poolInfo{};
     poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
@@ -505,7 +634,7 @@ void init(VkCommandBuffer /*cmd*/) {
     countsInfo.offset = 0;
     countsInfo.range = sizeof(LightCounts);
 
-    std::array<VkWriteDescriptorSet, 6> descriptorWrites{};
+    std::array<VkWriteDescriptorSet, 7> descriptorWrites{};
 
     descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
     descriptorWrites[0].dstSet = app_state.descriptorSet;
@@ -549,6 +678,18 @@ void init(VkCommandBuffer /*cmd*/) {
     descriptorWrites[5].descriptorCount = 1;
     descriptorWrites[5].pBufferInfo = &countsInfo;
 
+    VkDescriptorImageInfo imageInfo{};
+    imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+    imageInfo.imageView = app_state.texture ? app_state.texture->view : VK_NULL_HANDLE;
+    imageInfo.sampler = app_state.textureSampler;
+
+    descriptorWrites[6].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+    descriptorWrites[6].dstSet = app_state.descriptorSet;
+    descriptorWrites[6].dstBinding = 6;
+    descriptorWrites[6].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    descriptorWrites[6].descriptorCount = 1;
+    descriptorWrites[6].pImageInfo = &imageInfo;
+
     vkUpdateDescriptorSets(veekay::app.vk_device, static_cast<uint32_t>(descriptorWrites.size()), descriptorWrites.data(), 0, nullptr);
     
     std::cout << "Initialization complete!" << std::endl;
@@ -562,6 +703,13 @@ void shutdown() {
     vkDestroyDescriptorSetLayout(veekay::app.vk_device, app_state.descriptorSetLayout, nullptr);
     vkDestroyShaderModule(veekay::app.vk_device, app_state.fragmentShaderModule, nullptr);
     vkDestroyShaderModule(veekay::app.vk_device, app_state.vertexShaderModule, nullptr);
+    if (app_state.texture) {
+        delete app_state.texture;
+        app_state.texture = nullptr;
+    }
+    if (app_state.textureSampler != VK_NULL_HANDLE) {
+        vkDestroySampler(veekay::app.vk_device, app_state.textureSampler, nullptr);
+    }
     vkDestroyBuffer(veekay::app.vk_device, app_state.lightCountBuffer, nullptr);
     vkFreeMemory(veekay::app.vk_device, app_state.lightCountBufferMemory, nullptr);
     vkDestroyBuffer(veekay::app.vk_device, app_state.spotLightBuffer, nullptr);

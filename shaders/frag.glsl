@@ -3,6 +3,7 @@
 layout(location = 0) in vec3 fragPos;
 layout(location = 1) in vec3 fragNormal;
 layout(location = 2) in vec3 fragColor;
+layout(location = 3) in vec2 fragUV;
 
 layout(location = 0) out vec4 outColor;
 
@@ -48,11 +49,14 @@ layout(binding = 5) uniform LightCounts {
     ivec4 counts; // x: point, y: spot
 } lightCounts;
 
+layout(binding = 6) uniform sampler2D texSampler;
+
 vec3 blinnPhong(vec3 N, vec3 V, vec3 L, float intensity, vec3 lightColor) {
     float diff = max(dot(N, L), 0.0);
     vec3 H = normalize(L + V);
     float spec = pow(max(dot(N, H), 0.0), material.specularShininess.w);
-    vec3 base = material.albedo.rgb * fragColor;
+    vec3 texColor = texture(texSampler, fragUV).rgb;
+    vec3 base = material.albedo.rgb * fragColor * texColor;
     vec3 diffuse = base * diff;
     vec3 specular = material.specularShininess.rgb * spec;
     return (diffuse + specular) * lightColor * intensity;

@@ -11,6 +11,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
     bottomCenter.position = glm::vec3(0.0f, -halfHeight, 0.0f);
     bottomCenter.normal = glm::vec3(0.0f, -1.0f, 0.0f);
     bottomCenter.color = color;
+    bottomCenter.texCoord = glm::vec2(0.5f, 0.5f);
     vertices.push_back(bottomCenter);
     
     for (int i = 0; i <= segments; ++i) {
@@ -21,6 +22,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertex.position.z = radius * sin(theta);
         vertex.normal = glm::vec3(0.0f, -1.0f, 0.0f);
         vertex.color = color;
+        vertex.texCoord = glm::vec2(0.5f + 0.5f * cos(theta), 0.5f + 0.5f * sin(theta));
         vertices.push_back(vertex);
     }
     
@@ -28,6 +30,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
     topCenter.position = glm::vec3(0.0f, halfHeight, 0.0f);
     topCenter.normal = glm::vec3(0.0f, 1.0f, 0.0f);
     topCenter.color = color;
+    topCenter.texCoord = glm::vec2(0.5f, 0.5f);
     vertices.push_back(topCenter);
     
     for (int i = 0; i <= segments; ++i) {
@@ -38,6 +41,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertex.position.z = radius * sin(theta);
         vertex.normal = glm::vec3(0.0f, 1.0f, 0.0f);
         vertex.color = color;
+        vertex.texCoord = glm::vec2(0.5f + 0.5f * cos(theta), 0.5f + 0.5f * sin(theta));
         vertices.push_back(vertex);
     }
     
@@ -50,6 +54,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertexBottom.position.z = radius * sin(theta);
         vertexBottom.normal = glm::normalize(glm::vec3(cos(theta), 0.0f, sin(theta)));
         vertexBottom.color = color;
+        vertexBottom.texCoord = glm::vec2(theta / (2.0f * M_PI), 0.0f);
         vertices.push_back(vertexBottom);
         
         Vertex vertexTop;
@@ -58,6 +63,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertexTop.position.z = radius * sin(theta);
         vertexTop.normal = glm::normalize(glm::vec3(cos(theta), 0.0f, sin(theta)));
         vertexTop.color = color;
+        vertexTop.texCoord = glm::vec2(theta / (2.0f * M_PI), 1.0f);
         vertices.push_back(vertexTop);
     }
     
