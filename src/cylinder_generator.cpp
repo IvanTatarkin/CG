@@ -9,6 +9,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
 
     Vertex bottomCenter;
     bottomCenter.position = glm::vec3(0.0f, -halfHeight, 0.0f);
+    bottomCenter.normal = glm::vec3(0.0f, -1.0f, 0.0f);
     bottomCenter.color = color;
     vertices.push_back(bottomCenter);
     
@@ -18,12 +19,14 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertex.position.x = radius * cos(theta);
         vertex.position.y = -halfHeight;
         vertex.position.z = radius * sin(theta);
+        vertex.normal = glm::vec3(0.0f, -1.0f, 0.0f);
         vertex.color = color;
         vertices.push_back(vertex);
     }
     
     Vertex topCenter;
     topCenter.position = glm::vec3(0.0f, halfHeight, 0.0f);
+    topCenter.normal = glm::vec3(0.0f, 1.0f, 0.0f);
     topCenter.color = color;
     vertices.push_back(topCenter);
     
@@ -33,6 +36,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertex.position.x = radius * cos(theta);
         vertex.position.y = halfHeight;
         vertex.position.z = radius * sin(theta);
+        vertex.normal = glm::vec3(0.0f, 1.0f, 0.0f);
         vertex.color = color;
         vertices.push_back(vertex);
     }
@@ -44,6 +48,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertexBottom.position.x = radius * cos(theta);
         vertexBottom.position.y = -halfHeight;
         vertexBottom.position.z = radius * sin(theta);
+        vertexBottom.normal = glm::normalize(glm::vec3(cos(theta), 0.0f, sin(theta)));
         vertexBottom.color = color;
         vertices.push_back(vertexBottom);
         
@@ -51,6 +56,7 @@ std::vector<Vertex> CylinderGenerator::generateCylinder(float radius, float heig
         vertexTop.position.x = radius * cos(theta);
         vertexTop.position.y = halfHeight;
         vertexTop.position.z = radius * sin(theta);
+        vertexTop.normal = glm::normalize(glm::vec3(cos(theta), 0.0f, sin(theta)));
         vertexTop.color = color;
         vertices.push_back(vertexTop);
     }
