@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/CG
+CMAKE_SOURCE_DIR = /home/ivan/CG3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/CG/build
+CMAKE_BINARY_DIR = /home/ivan/CG3/build
 
 # Include any dependencies generated for this target.
 include _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/depend.make
@@ -72,16 +72,16 @@ include _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/flags.make
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/flags.make
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o: _deps/vk-bootstrap-src/src/VkBootstrap.cpp
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o"
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o -MF CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o.d -o CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o -c /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o"
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o -MF CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o.d -o CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o -c /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp
 
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i"
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp > CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp > CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i
 
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s"
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp -o CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp -o CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s
 
 # Object files for target vk-bootstrap
 vk__bootstrap_OBJECTS = \
@@ -93,19 +93,19 @@ vk__bootstrap_EXTERNAL_OBJECTS =
 _deps/vk-bootstrap-build/libvk-bootstrap.a: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o
 _deps/vk-bootstrap-build/libvk-bootstrap.a: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make
 _deps/vk-bootstrap-build/libvk-bootstrap.a: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libvk-bootstrap.a"
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -P CMakeFiles/vk-bootstrap.dir/cmake_clean_target.cmake
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vk-bootstrap.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libvk-bootstrap.a"
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -P CMakeFiles/vk-bootstrap.dir/cmake_clean_target.cmake
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vk-bootstrap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build: _deps/vk-bootstrap-build/libvk-bootstrap.a
 .PHONY : _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build
 
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/clean:
-	cd /home/ivan/CG/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -P CMakeFiles/vk-bootstrap.dir/cmake_clean.cmake
+	cd /home/ivan/CG3/build/_deps/vk-bootstrap-build && $(CMAKE_COMMAND) -P CMakeFiles/vk-bootstrap.dir/cmake_clean.cmake
 .PHONY : _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/clean
 
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/depend:
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG /home/ivan/CG/build/_deps/vk-bootstrap-src /home/ivan/CG/build /home/ivan/CG/build/_deps/vk-bootstrap-build /home/ivan/CG/build/_deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG3 /home/ivan/CG3/build/_deps/vk-bootstrap-src /home/ivan/CG3/build /home/ivan/CG3/build/_deps/vk-bootstrap-build /home/ivan/CG3/build/_deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/depend
 

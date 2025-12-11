@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/CG
+CMAKE_SOURCE_DIR = /home/ivan/CG3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/CG/build
+CMAKE_BINARY_DIR = /home/ivan/CG3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CG/build/CMakeFiles /home/ivan/CG/build/_deps/vk-bootstrap-build//CMakeFiles/progress.marks
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CG/build/CMakeFiles 0
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CG3/build/CMakeFiles /home/ivan/CG3/build/_deps/vk-bootstrap-build//CMakeFiles/progress.marks
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CG3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/clean
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/preinstall
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/preinstall
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/rule:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/rule
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/rule
 .PHONY : _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ vk-bootstrap: _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/rule
 
 # fast build rule for target.
 vk-bootstrap/fast:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build
 .PHONY : vk-bootstrap/fast
 
 src/VkBootstrap.o: src/VkBootstrap.cpp.o
@@ -180,7 +180,7 @@ src/VkBootstrap.o: src/VkBootstrap.cpp.o
 
 # target to build an object file
 src/VkBootstrap.cpp.o:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o
 .PHONY : src/VkBootstrap.cpp.o
 
 src/VkBootstrap.i: src/VkBootstrap.cpp.i
@@ -188,7 +188,7 @@ src/VkBootstrap.i: src/VkBootstrap.cpp.i
 
 # target to preprocess a source file
 src/VkBootstrap.cpp.i:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.i
 .PHONY : src/VkBootstrap.cpp.i
 
 src/VkBootstrap.s: src/VkBootstrap.cpp.s
@@ -196,7 +196,7 @@ src/VkBootstrap.s: src/VkBootstrap.cpp.s
 
 # target to generate assembly for a file
 src/VkBootstrap.cpp.s:
-	cd /home/ivan/CG/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s
+	cd /home/ivan/CG3/build && $(MAKE) $(MAKESILENT) -f _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/build.make _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.s
 .PHONY : src/VkBootstrap.cpp.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

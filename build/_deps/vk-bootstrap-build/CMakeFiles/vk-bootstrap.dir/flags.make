@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ivan/CG/build/_deps/vk-bootstrap-src/src -isystem /home/ivan/vulkan-sdk/x86_64/include
+CXX_INCLUDES = -I/home/ivan/CG3/build/_deps/vk-bootstrap-src/src -isystem /home/ivan/vulkan-sdk/x86_64/include
 
 CXX_FLAGS = -Wall -Wextra -Wconversion -Wsign-conversion -std=gnu++20
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ivan/CG/build/_deps/vk-bootstrap-src
+# Install script for directory: /home/ivan/CG3/build/_deps/vk-bootstrap-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

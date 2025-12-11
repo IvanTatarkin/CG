@@ -1,4 +1,4 @@
-# Install script for directory: /home/ivan/CG
+# Install script for directory: /home/ivan/CG3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,12 +44,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ivan/CG/build/_deps/glfw-build/cmake_install.cmake")
+  include("/home/ivan/CG3/build/_deps/glfw-build/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ivan/CG/build/_deps/vk-bootstrap-build/cmake_install.cmake")
+  include("/home/ivan/CG3/build/_deps/vk-bootstrap-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ivan/CG/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ivan/CG3/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

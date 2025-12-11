@@ -1,6 +1,7 @@
-CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
- /usr/include/stdc-predef.h /home/ivan/CG/include/veekay/veekay.hpp \
- /home/ivan/CG/include/veekay/types.hpp /usr/include/c++/11/cstdint \
+CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: \
+ /home/ivan/CG3/src/main.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/include/veekay/veekay.hpp \
+ /home/ivan/CG3/include/veekay/types.hpp /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -93,7 +94,7 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ivan/CG/include/veekay/application.hpp \
+ /home/ivan/CG3/include/veekay/application.hpp \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vulkan_core.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vk_platform.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_h264std.h \
@@ -112,13 +113,14 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std_decode.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
- /home/ivan/CG/include/veekay/input.hpp \
- /home/ivan/CG/include/veekay/graphics.hpp \
- /home/ivan/CG/include/sphere_generator.h /home/ivan/CG/include/vertex.h \
- /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
- /usr/include/glm/detail/setup.hpp /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/include/c++/11/cstddef \
- /usr/include/glm/simd/platform.h /usr/include/c++/11/climits \
+ /home/ivan/CG3/include/veekay/input.hpp \
+ /home/ivan/CG3/include/veekay/graphics.hpp \
+ /home/ivan/CG3/include/sphere_generator.h \
+ /home/ivan/CG3/include/vertex.h /usr/include/glm/glm.hpp \
+ /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
+ /usr/include/c++/11/cstddef /usr/include/glm/simd/platform.h \
+ /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -257,7 +259,7 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/range_access.h \
- /usr/include/c++/11/bits/vector.tcc /home/ivan/CG/include/camera.h \
+ /usr/include/c++/11/bits/vector.tcc /home/ivan/CG3/include/camera.h \
  /usr/include/glm/gtc/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_projection.hpp \
  /usr/include/glm/gtc/constants.hpp \
@@ -270,7 +272,7 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/ivan/CG/include/math_utils.h /usr/include/glm/gtc/type_ptr.hpp \
+ /home/ivan/CG3/include/math_utils.h /usr/include/glm/gtc/type_ptr.hpp \
  /usr/include/glm/gtc/quaternion.hpp \
  /usr/include/glm/ext/vector_relational.hpp \
  /usr/include/glm/ext/vector_relational.inl \
@@ -415,5 +417,5 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: /home/ivan/CG/src/main.cpp \
  /usr/include/c++/11/bits/shared_ptr_base.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /home/ivan/CG/third_party/imgui/imgui.h \
- /home/ivan/CG/third_party/imgui/imconfig.h
+ /home/ivan/CG3/third_party/imgui/imgui.h \
+ /home/ivan/CG3/third_party/imgui/imconfig.h

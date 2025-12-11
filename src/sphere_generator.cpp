@@ -20,7 +20,7 @@ std::vector<Vertex> SphereGenerator::generateSphere(float radius, int segments, 
             vertex.position.x = radius * sin(phi) * cos(theta);
             vertex.position.y = radius * cos(phi);
             vertex.position.z = radius * sin(phi) * sin(theta);
-            vertex.normal = glm::normalize(vertex.position); // нормаль направлена от центра
+            vertex.normal = glm::normalize(vertex.position); 
             vertex.normal = glm::normalize(vertex.position);
             vertex.color = color;
             vertex.texCoord = glm::vec2(theta / (2.0f * M_PI), phi / M_PI);

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/CG
+CMAKE_SOURCE_DIR = /home/ivan/CG3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/CG/build
+CMAKE_BINARY_DIR = /home/ivan/CG3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lab1_3DGraphics.dir/depend.make
@@ -72,72 +72,72 @@ include CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o -c /home/ivan/CG/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o -c /home/ivan/CG3/src/main.cpp
 
 CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/main.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/main.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.i
 
 CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/main.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/main.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.s
 
 CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o: ../src/cylinder_generator.cpp
 CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o -c /home/ivan/CG/src/cylinder_generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o -c /home/ivan/CG3/src/cylinder_generator.cpp
 
 CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/cylinder_generator.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/cylinder_generator.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.i
 
 CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/cylinder_generator.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/cylinder_generator.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.s
 
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generator.cpp
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o -c /home/ivan/CG/src/sphere_generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o -c /home/ivan/CG3/src/sphere_generator.cpp
 
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/sphere_generator.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/sphere_generator.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.i
 
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/sphere_generator.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/sphere_generator.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.s
 
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o: ../src/camera.cpp
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o -c /home/ivan/CG/src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o -c /home/ivan/CG3/src/camera.cpp
 
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/camera.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/camera.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.i
 
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/camera.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/camera.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.s
 
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/flags.make
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o: ../src/math_utils.cpp
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o: CMakeFiles/Lab1_3DGraphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o -c /home/ivan/CG/src/math_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o -MF CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o.d -o CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o -c /home/ivan/CG3/src/math_utils.cpp
 
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/math_utils.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/math_utils.cpp > CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.i
 
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/math_utils.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/math_utils.cpp -o CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.s
 
 # Object files for target Lab1_3DGraphics
 Lab1_3DGraphics_OBJECTS = \
@@ -163,7 +163,7 @@ Lab1_3DGraphics: /usr/lib/x86_64-linux-gnu/libm.so
 Lab1_3DGraphics: /home/ivan/vulkan-sdk/x86_64/lib/libvulkan.so
 Lab1_3DGraphics: _deps/vk-bootstrap-build/libvk-bootstrap.a
 Lab1_3DGraphics: CMakeFiles/Lab1_3DGraphics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Lab1_3DGraphics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Lab1_3DGraphics"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab1_3DGraphics.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -175,6 +175,6 @@ CMakeFiles/Lab1_3DGraphics.dir/clean:
 .PHONY : CMakeFiles/Lab1_3DGraphics.dir/clean
 
 CMakeFiles/Lab1_3DGraphics.dir/depend:
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG /home/ivan/CG /home/ivan/CG/build /home/ivan/CG/build /home/ivan/CG/build/CMakeFiles/Lab1_3DGraphics.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG3 /home/ivan/CG3 /home/ivan/CG3/build /home/ivan/CG3/build /home/ivan/CG3/build/CMakeFiles/Lab1_3DGraphics.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Lab1_3DGraphics.dir/depend
 

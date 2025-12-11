@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ivan/CG/third_party/imgui -I/home/ivan/CG/third_party/imgui/backends -I/home/ivan/vulkan-sdk/x86_64/include -I/home/ivan/CG/include -I/home/ivan/CG/build/_deps/imgui-src -I/home/ivan/CG/build/_deps/imgui-src/backends
+CXX_INCLUDES = -I/home/ivan/CG3/third_party/imgui -I/home/ivan/CG3/third_party/imgui/backends -I/home/ivan/vulkan-sdk/x86_64/include -I/home/ivan/CG3/include -I/home/ivan/CG3/build/_deps/imgui-src -I/home/ivan/CG3/build/_deps/imgui-src/backends
 
 CXX_FLAGS = -Wall -Wextra -std=gnu++20
 

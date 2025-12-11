@@ -159,11 +159,13 @@ int veekay::run(const veekay::ApplicationInfo& app_info) {
 		{
 			vkb::DeviceBuilder device_builder(physical_device);
 
-			VkPhysicalDeviceDynamicRenderingFeatures dyn_rendering{
-				.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES,
+			VkPhysicalDeviceVulkan13Features features13{
+				.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES,
+				.pNext = nullptr,
 				.dynamicRendering = VK_TRUE,
 			};
-			device_builder.add_pNext(&dyn_rendering);
+
+			device_builder.add_pNext(&features13);
 
 			auto result = device_builder.build();
 

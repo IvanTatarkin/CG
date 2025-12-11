@@ -1,5 +1,5 @@
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: \
- /home/ivan/CG/src/veekay/veekay.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/src/veekay/veekay.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -188,20 +188,20 @@ CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std_decode.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
- /home/ivan/CG/build/_deps/glfw-src/include/GLFW/glfw3.h \
- /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.h \
+ /home/ivan/CG3/build/_deps/glfw-src/include/GLFW/glfw3.h \
+ /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.h \
  /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
- /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrapDispatch.h \
- /home/ivan/CG/build/_deps/imgui-src/imgui.h \
- /home/ivan/CG/build/_deps/imgui-src/imconfig.h \
+ /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrapDispatch.h \
+ /home/ivan/CG3/build/_deps/imgui-src/imgui.h \
+ /home/ivan/CG3/build/_deps/imgui-src/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
- /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_glfw.h \
- /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.h \
+ /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_glfw.h \
+ /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vulkan.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vulkan_core.h \
- /home/ivan/CG/include/veekay/veekay.hpp \
- /home/ivan/CG/include/veekay/types.hpp /usr/include/c++/11/cmath \
+ /home/ivan/CG3/include/veekay/veekay.hpp \
+ /home/ivan/CG3/include/veekay/types.hpp /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -224,6 +224,6 @@ CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ivan/CG/include/veekay/application.hpp \
- /home/ivan/CG/include/veekay/input.hpp \
- /home/ivan/CG/include/veekay/graphics.hpp
+ /home/ivan/CG3/include/veekay/application.hpp \
+ /home/ivan/CG3/include/veekay/input.hpp \
+ /home/ivan/CG3/include/veekay/graphics.hpp

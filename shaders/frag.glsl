@@ -4,6 +4,7 @@ layout(location = 0) in vec3 fragPos;
 layout(location = 1) in vec3 fragNormal;
 layout(location = 2) in vec3 fragColor;
 layout(location = 3) in vec2 fragUV;
+layout(location = 4) in vec4 fragPosLightSpace;
 
 layout(location = 0) out vec4 outColor;
 
@@ -12,7 +13,7 @@ layout(binding = 0) uniform UniformBufferObject {
     mat4 view;
     mat4 projection;
     mat4 normalMatrix;
-    mat4 lightViewProj;
+    mat4 lightSpaceMatrix;
     vec4 cameraPos;
     vec4 ambientColor;   // rgb + intensity in w
 } ubo;
@@ -51,23 +52,25 @@ layout(binding = 5) uniform LightCounts {
 } lightCounts;
 
 layout(binding = 6) uniform sampler2D texSampler;
-layout(binding = 7) uniform sampler2D shadowMap;
+layout(binding = 7) uniform sampler2DShadow shadowMap;
 
-float sampleShadow(vec4 lightSpacePos, vec3 N, vec3 L) {
-    vec3 projCoords = lightSpacePos.xyz / lightSpacePos.w;
+float computeShadow(vec4 posLightSpace, vec3 N, vec3 lightDir) {
+    vec3 projCoords = posLightSpace.xyz / posLightSpace.w;
     projCoords = projCoords * 0.5 + 0.5;
-    if (projCoords.z > 1.0) return 0.0;
-    float bias = max(0.0015 * (1.0 - dot(N, L)), 0.001);
+    if (projCoords.z > 1.0) {
+        return 0.0;
+    }
+    float bias = max(0.0015, 0.005 * (1.0 - dot(N, lightDir)));
+    vec2 texelSize = 1.0 / vec2(textureSize(shadowMap, 0));
     float shadow = 0.0;
-    vec2 texel = 1.0 / vec2(textureSize(shadowMap, 0));
     for (int x = -1; x <= 1; ++x) {
         for (int y = -1; y <= 1; ++y) {
-            float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texel).r;
-            shadow += projCoords.z - bias > pcfDepth ? 1.0 : 0.0;
+            vec2 offset = vec2(x, y) * texelSize;
+            shadow += texture(shadowMap, vec3(projCoords.xy + offset, projCoords.z - bias));
         }
     }
     shadow /= 9.0;
-    return shadow;
+    return 1.0 - shadow;
 }
 
 vec3 blinnPhong(vec3 N, vec3 V, vec3 L, float intensity, vec3 lightColor) {
@@ -88,7 +91,7 @@ void main() {
 
     // Directional light
     vec3 Ld = normalize(-dirLight.directionIntensity.xyz);
-    float shadow = sampleShadow(ubo.lightViewProj * vec4(fragPos, 1.0), N, Ld);
+    float shadow = computeShadow(fragPosLightSpace, N, Ld);
     color += (1.0 - shadow) * blinnPhong(N, V, Ld, dirLight.directionIntensity.w, dirLight.color.rgb);
 
     // Point lights

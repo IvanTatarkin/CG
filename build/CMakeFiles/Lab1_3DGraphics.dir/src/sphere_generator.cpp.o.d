@@ -1,8 +1,8 @@
 CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: \
- /home/ivan/CG/src/sphere_generator.cpp /usr/include/stdc-predef.h \
- /home/ivan/CG/include/sphere_generator.h /home/ivan/CG/include/vertex.h \
- /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
- /usr/include/c++/11/cmath \
+ /home/ivan/CG3/src/sphere_generator.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/include/sphere_generator.h \
+ /home/ivan/CG3/include/vertex.h /usr/include/glm/glm.hpp \
+ /usr/include/glm/detail/_fixes.hpp /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

@@ -7,12 +7,12 @@ layout(binding = 0) uniform UniformBufferObject {
     mat4 view;
     mat4 projection;
     mat4 normalMatrix;
-    mat4 lightViewProj;
+    mat4 lightSpaceMatrix;
     vec4 cameraPos;
     vec4 ambientColor;
 } ubo;
 
 void main() {
-    gl_Position = ubo.lightViewProj * ubo.model * vec4(inPosition, 1.0);
+    gl_Position = ubo.lightSpaceMatrix * ubo.model * vec4(inPosition, 1.0);
 }
 

@@ -1,6 +1,6 @@
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o: \
- /home/ivan/CG/src/math_utils.cpp /usr/include/stdc-predef.h \
- /home/ivan/CG/include/math_utils.h /usr/include/glm/glm.hpp \
+ /home/ivan/CG3/src/math_utils.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/include/math_utils.h /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

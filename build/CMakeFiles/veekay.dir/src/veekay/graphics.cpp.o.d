@@ -1,6 +1,6 @@
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o: \
- /home/ivan/CG/src/veekay/graphics.cpp /usr/include/stdc-predef.h \
- /home/ivan/CG/include/veekay/graphics.hpp \
+ /home/ivan/CG3/src/veekay/graphics.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/include/veekay/graphics.hpp \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vulkan_core.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vk_platform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
@@ -190,4 +190,4 @@ CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/ivan/CG/include/veekay/application.hpp
+ /home/ivan/CG3/include/veekay/application.hpp

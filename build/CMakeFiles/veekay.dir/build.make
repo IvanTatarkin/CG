@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/CG
+CMAKE_SOURCE_DIR = /home/ivan/CG3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/CG/build
+CMAKE_BINARY_DIR = /home/ivan/CG3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/veekay.dir/depend.make
@@ -72,128 +72,128 @@ include CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: ../src/veekay/veekay.cpp
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o -c /home/ivan/CG/src/veekay/veekay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/veekay.cpp.o -c /home/ivan/CG3/src/veekay/veekay.cpp
 
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/src/veekay/veekay.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/veekay/veekay.cpp > CMakeFiles/veekay.dir/src/veekay/veekay.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/veekay/veekay.cpp > CMakeFiles/veekay.dir/src/veekay/veekay.cpp.i
 
 CMakeFiles/veekay.dir/src/veekay/veekay.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/src/veekay/veekay.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/veekay/veekay.cpp -o CMakeFiles/veekay.dir/src/veekay/veekay.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/veekay/veekay.cpp -o CMakeFiles/veekay.dir/src/veekay/veekay.cpp.s
 
 CMakeFiles/veekay.dir/src/veekay/input.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/src/veekay/input.cpp.o: ../src/veekay/input.cpp
 CMakeFiles/veekay.dir/src/veekay/input.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/veekay.dir/src/veekay/input.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/input.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/input.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/input.cpp.o -c /home/ivan/CG/src/veekay/input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/veekay.dir/src/veekay/input.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/input.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/input.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/input.cpp.o -c /home/ivan/CG3/src/veekay/input.cpp
 
 CMakeFiles/veekay.dir/src/veekay/input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/src/veekay/input.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/veekay/input.cpp > CMakeFiles/veekay.dir/src/veekay/input.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/veekay/input.cpp > CMakeFiles/veekay.dir/src/veekay/input.cpp.i
 
 CMakeFiles/veekay.dir/src/veekay/input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/src/veekay/input.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/veekay/input.cpp -o CMakeFiles/veekay.dir/src/veekay/input.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/veekay/input.cpp -o CMakeFiles/veekay.dir/src/veekay/input.cpp.s
 
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o: ../src/veekay/graphics.cpp
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o -c /home/ivan/CG/src/veekay/graphics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o -MF CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o.d -o CMakeFiles/veekay.dir/src/veekay/graphics.cpp.o -c /home/ivan/CG3/src/veekay/graphics.cpp
 
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/src/veekay/graphics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/src/veekay/graphics.cpp > CMakeFiles/veekay.dir/src/veekay/graphics.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/src/veekay/graphics.cpp > CMakeFiles/veekay.dir/src/veekay/graphics.cpp.i
 
 CMakeFiles/veekay.dir/src/veekay/graphics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/src/veekay/graphics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/src/veekay/graphics.cpp -o CMakeFiles/veekay.dir/src/veekay/graphics.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/src/veekay/graphics.cpp -o CMakeFiles/veekay.dir/src/veekay/graphics.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o: _deps/imgui-src/backends/imgui_impl_glfw.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_glfw.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o: _deps/imgui-src/backends/imgui_impl_vulkan.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o: _deps/imgui-src/imgui.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/imgui.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/imgui.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/imgui.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/imgui.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/imgui.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o: _deps/imgui-src/imgui_draw.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/imgui_draw.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/imgui_draw.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/imgui_draw.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/imgui_draw.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/imgui_draw.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_draw.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o: _deps/imgui-src/imgui_tables.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/imgui_tables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/imgui_tables.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/imgui_tables.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/imgui_tables.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/imgui_tables.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/imgui_tables.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.s
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o: CMakeFiles/veekay.dir/flags.make
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o: _deps/imgui-src/imgui_widgets.cpp
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o: CMakeFiles/veekay.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o -c /home/ivan/CG/build/_deps/imgui-src/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o -MF CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o.d -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o -c /home/ivan/CG3/build/_deps/imgui-src/imgui_widgets.cpp
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG/build/_deps/imgui-src/imgui_widgets.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CG3/build/_deps/imgui-src/imgui_widgets.cpp > CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.i
 
 CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG/build/_deps/imgui-src/imgui_widgets.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CG3/build/_deps/imgui-src/imgui_widgets.cpp -o CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.s
 
 # Object files for target veekay
 veekay_OBJECTS = \
@@ -221,7 +221,7 @@ libveekay.a: CMakeFiles/veekay.dir/_deps/imgui-src/imgui_tables.cpp.o
 libveekay.a: CMakeFiles/veekay.dir/_deps/imgui-src/imgui_widgets.cpp.o
 libveekay.a: CMakeFiles/veekay.dir/build.make
 libveekay.a: CMakeFiles/veekay.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libveekay.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CG3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libveekay.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/veekay.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/veekay.dir/link.txt --verbose=$(VERBOSE)
 
@@ -234,6 +234,6 @@ CMakeFiles/veekay.dir/clean:
 .PHONY : CMakeFiles/veekay.dir/clean
 
 CMakeFiles/veekay.dir/depend:
-	cd /home/ivan/CG/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG /home/ivan/CG /home/ivan/CG/build /home/ivan/CG/build /home/ivan/CG/build/CMakeFiles/veekay.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ivan/CG3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/CG3 /home/ivan/CG3 /home/ivan/CG3/build /home/ivan/CG3/build /home/ivan/CG3/build/CMakeFiles/veekay.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/veekay.dir/depend
 

@@ -1,6 +1,6 @@
 CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o: \
- /home/ivan/CG/src/camera.cpp /usr/include/stdc-predef.h \
- /home/ivan/CG/include/camera.h /usr/include/glm/glm.hpp \
+ /home/ivan/CG3/src/camera.cpp /usr/include/stdc-predef.h \
+ /home/ivan/CG3/include/camera.h /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

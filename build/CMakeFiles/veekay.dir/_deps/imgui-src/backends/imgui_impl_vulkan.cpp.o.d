@@ -1,7 +1,7 @@
 CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o: \
- /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp \
- /usr/include/stdc-predef.h /home/ivan/CG/build/_deps/imgui-src/imgui.h \
- /home/ivan/CG/build/_deps/imgui-src/imconfig.h \
+ /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.cpp \
+ /usr/include/stdc-predef.h /home/ivan/CG3/build/_deps/imgui-src/imgui.h \
+ /home/ivan/CG3/build/_deps/imgui-src/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/string.h \
@@ -16,7 +16,7 @@ CMakeFiles/veekay.dir/_deps/imgui-src/backends/imgui_impl_vulkan.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/ivan/CG/build/_deps/imgui-src/backends/imgui_impl_vulkan.h \
+ /home/ivan/CG3/build/_deps/imgui-src/backends/imgui_impl_vulkan.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vulkan.h \
  /home/ivan/vulkan-sdk/x86_64/include/vulkan/vk_platform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \

@@ -8,18 +8,18 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ivan/CG/src/camera.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o.d"
-  "/home/ivan/CG/src/cylinder_generator.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o.d"
-  "/home/ivan/CG/src/main.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o.d"
-  "/home/ivan/CG/src/math_utils.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o.d"
-  "/home/ivan/CG/src/sphere_generator.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o.d"
+  "/home/ivan/CG3/src/camera.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/camera.cpp.o.d"
+  "/home/ivan/CG3/src/cylinder_generator.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/cylinder_generator.cpp.o.d"
+  "/home/ivan/CG3/src/main.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o.d"
+  "/home/ivan/CG3/src/math_utils.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o.d"
+  "/home/ivan/CG3/src/sphere_generator.cpp" "CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o" "gcc" "CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ivan/CG/build/CMakeFiles/veekay.dir/DependInfo.cmake"
-  "/home/ivan/CG/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/DependInfo.cmake"
-  "/home/ivan/CG/build/_deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/DependInfo.cmake"
+  "/home/ivan/CG3/build/CMakeFiles/veekay.dir/DependInfo.cmake"
+  "/home/ivan/CG3/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "/home/ivan/CG3/build/_deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

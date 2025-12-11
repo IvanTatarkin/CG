@@ -1,7 +1,7 @@
 _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o: \
- /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp \
+ /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.cpp \
  /usr/include/stdc-predef.h \
- /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrap.h \
+ /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrap.h \
  /usr/include/c++/11/cassert \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -169,7 +169,7 @@ _deps/vk-bootstrap-build/CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o: \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std_decode.h \
  /home/ivan/vulkan-sdk/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
- /home/ivan/CG/build/_deps/vk-bootstrap-src/src/VkBootstrapDispatch.h \
+ /home/ivan/CG3/build/_deps/vk-bootstrap-src/src/VkBootstrapDispatch.h \
  /usr/include/dlfcn.h /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
  /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/tuple \
