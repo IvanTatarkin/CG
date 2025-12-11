@@ -123,13 +123,31 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE veekay)
 
 # Copy shaders to build directory
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
-if(EXISTS ${CMAKE_SOURCE_DIR}/shaders/vert.spv)
-    file(COPY ${CMAKE_SOURCE_DIR}/shaders/vert.spv DESTINATION ${CMAKE_BINARY_DIR}/shaders)
-endif()
-if(EXISTS ${CMAKE_SOURCE_DIR}/shaders/frag.spv)
-    file(COPY ${CMAKE_SOURCE_DIR}/shaders/frag.spv DESTINATION ${CMAKE_BINARY_DIR}/shaders)
-endif()
+set(SHADER_OUTPUT_DIR "${CMAKE_BINARY_DIR}/shaders")
+file(MAKE_DIRECTORY "${SHADER_OUTPUT_DIR}")
+
+# Copy SPIR-V shaders next to the executable on every build so the app can be run
+# from any working directory (e.g. from build/).
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/shaders/vert.spv"
+        "${CMAKE_SOURCE_DIR}/shaders/frag.spv"
+        "${CMAKE_SOURCE_DIR}/shaders/shadow_vert.spv"
+        "${CMAKE_SOURCE_DIR}/shaders/shadow_frag.spv"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders"
+    VERBATIM
+)
+
+# Copy textures next to the executable so relative paths work from build/.
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/textures"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/textures/owl.ppm"
+        "${CMAKE_SOURCE_DIR}/textures/checker.ppm"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/textures"
+    VERBATIM
+)
 
 # Compiler-specific options
 if(MSVC)

@@ -1186,7 +1186,15 @@ CMakeFiles/Lab1_3DGraphics.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
   ../third_party/imgui/imgui.h \
-  ../third_party/imgui/imconfig.h
+  ../third_party/imgui/imconfig.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h
 
 CMakeFiles/Lab1_3DGraphics.dir/src/math_utils.cpp.o: ../src/math_utils.cpp \
   /usr/include/stdc-predef.h \
@@ -1785,6 +1793,12 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 ../src/math_utils.cpp:
 
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
 ../third_party/imgui/imgui.h:
 
 /usr/include/c++/11/bits/fs_dir.h:
@@ -1988,6 +2002,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -2258,6 +2274,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/c++/11/bits/ranges_util.h:
 
 /usr/include/glm/ext/vector_double2_precision.hpp:
+
+/usr/include/unistd.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -2613,6 +2631,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 
 /usr/include/glm/ext/vector_int4_sized.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
 /usr/include/c++/11/bits/exception_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
@@ -2656,6 +2676,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/glm/mat2x4.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/c++/11/bits/ranges_algobase.h:
 
@@ -2734,6 +2756,8 @@ CMakeFiles/Lab1_3DGraphics.dir/src/sphere_generator.cpp.o: ../src/sphere_generat
 /usr/include/glm/ext/matrix_double4x4_precision.hpp:
 
 /usr/include/glm/ext/matrix_float4x4_precision.hpp:
+
+/usr/include/linux/close_range.h:
 
 /usr/include/glm/detail/func_vector_relational.inl:
 

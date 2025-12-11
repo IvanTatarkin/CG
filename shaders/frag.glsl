@@ -48,7 +48,7 @@ layout(std430, binding = 4) readonly buffer SpotLightBuffer {
 };
 
 layout(binding = 5) uniform LightCounts {
-    ivec4 counts; // x: point, y: spot
+    ivec4 counts; // x: point, y: spot, z: shadows enabled (0/1)
 } lightCounts;
 
 layout(binding = 6) uniform sampler2D texSampler;
@@ -60,7 +60,12 @@ float computeShadow(vec4 posLightSpace, vec3 N, vec3 lightDir) {
     if (projCoords.z > 1.0) {
         return 0.0;
     }
-    float bias = max(0.0015, 0.005 * (1.0 - dot(N, lightDir)));
+    if (projCoords.x < 0.0 || projCoords.x > 1.0 || projCoords.y < 0.0 || projCoords.y > 1.0) {
+        return 0.0;
+    }
+    // Receiver bias: reduce self-shadowing on curved surfaces (sphere) while keeping contact shadows.
+    float ndotl = clamp(dot(N, lightDir), 0.0, 1.0);
+    float bias = max(0.0015, 0.01 * (1.0 - ndotl));
     vec2 texelSize = 1.0 / vec2(textureSize(shadowMap, 0));
     float shadow = 0.0;
     for (int x = -1; x <= 1; ++x) {
@@ -91,7 +96,7 @@ void main() {
 
     // Directional light
     vec3 Ld = normalize(-dirLight.directionIntensity.xyz);
-    float shadow = computeShadow(fragPosLightSpace, N, Ld);
+    float shadow = (lightCounts.counts.z != 0) ? computeShadow(fragPosLightSpace, N, Ld) : 0.0;
     color += (1.0 - shadow) * blinnPhong(N, V, Ld, dirLight.directionIntensity.w, dirLight.color.rgb);
 
     // Point lights

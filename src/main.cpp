@@ -16,6 +16,45 @@
 #include <filesystem>
 #include <limits>
 #include <imgui.h>
+#include <unistd.h>
+
+static std::filesystem::path getExecutableDir() {
+    std::filesystem::path exeDir;
+#if defined(__linux__)
+    std::array<char, 4096> buf{};
+    ssize_t len = ::readlink("/proc/self/exe", buf.data(), buf.size() - 1);
+    if (len > 0) {
+        buf[static_cast<size_t>(len)] = '\0';
+        exeDir = std::filesystem::path(buf.data()).parent_path();
+    }
+#endif
+    if (exeDir.empty()) {
+        exeDir = std::filesystem::current_path();
+    }
+    return exeDir;
+}
+
+// Resolve asset paths (shaders/textures) so the app can be launched from any working directory.
+static std::filesystem::path resolveAssetPath(const std::filesystem::path& p) {
+    std::error_code ec;
+    if (std::filesystem::exists(p, ec)) return p;
+
+    const std::filesystem::path exeDir = getExecutableDir();
+    const std::filesystem::path baseDir = exeDir.parent_path(); // usually project root when launched from build/
+
+    const std::filesystem::path candidates[] = {
+        exeDir / p,
+        baseDir / p,
+        // common layout: <dir>/shaders or <dir>/textures
+        exeDir / p.parent_path().filename() / p.filename(),
+        baseDir / p.parent_path().filename() / p.filename()
+    };
+
+    for (const auto& c : candidates) {
+        if (std::filesystem::exists(c, ec)) return c;
+    }
+    return p;
+}
 
 struct UniformBufferObject {
     alignas(16) glm::mat4 model;
@@ -140,7 +179,9 @@ static void makePlaneMesh(float halfSize, float y, float uvScale,
     outVertices.push_back(Vertex{glm::vec3(-halfSize, y,  halfSize), normal, color, glm::vec2(0.0f, uvScale)});
     outVertices.push_back(Vertex{glm::vec3( halfSize, y,  halfSize), normal, color, glm::vec2(uvScale, uvScale)});
 
-    outIndices = {0, 1, 2, 2, 1, 3};
+    // Keep a consistent winding order for both triangles.
+    // This matters for the shadow pass where back-face culling is enabled.
+    outIndices = {0, 2, 1, 2, 3, 1};
 }
 
 static struct {
@@ -190,6 +231,14 @@ static struct {
     VkImageView shadowImageView = VK_NULL_HANDLE;
     VkSampler shadowSampler = VK_NULL_HANDLE;
     bool shadowInitialized = false;
+    bool planeCastsShadow = false; // avoid plane self-shadowing artifacts
+    bool enableShadows = true;
+    bool enableFillLight = true;
+    float fillLightIntensity = 8.0f;
+    float fillLightRange = 8.0f;
+    float fillLightForwardOffset = 0.6f;
+    float fillLightUpOffset = 0.25f;
+    glm::vec3 fillLightColor = glm::vec3(0.85f, 0.9f, 1.0f);
     Camera camera;
     float sphereRotationY = 0.0f;
     float sphereRotationX = 0.0f;
@@ -224,9 +273,11 @@ static struct {
 } app_state;
 
 VkShaderModule loadShaderModule(const char* path) {
-    std::ifstream file(path, std::ios::binary | std::ios::ate);
+    std::filesystem::path resolved = resolveAssetPath(path);
+    std::ifstream file(resolved, std::ios::binary | std::ios::ate);
     if (!file.is_open()) {
-        std::cerr << "Failed to open shader file: " << path << std::endl;
+        std::cerr << "Failed to open shader file: " << path
+                  << " (resolved to: " << resolved.string() << ")" << std::endl;
         return VK_NULL_HANDLE;
     }
     
@@ -493,14 +544,21 @@ void init(VkCommandBuffer cmd) {
     
     TextureData texData;
     try {
-        if (std::filesystem::exists(kDefaultTexturePath)) {
-            texData = loadPPM(kDefaultTexturePath);
-        } else if (std::filesystem::exists("textures/checker.ppm")) {
-            texData = loadPPM("textures/checker.ppm");
+        std::filesystem::path defaultTex = resolveAssetPath(kDefaultTexturePath);
+        std::filesystem::path checkerTex = resolveAssetPath("textures/checker.ppm");
+
+        if (std::filesystem::exists(defaultTex)) {
+            std::cout << "Loading texture: " << defaultTex.string() << std::endl;
+            texData = loadPPM(defaultTex);
+        } else if (std::filesystem::exists(checkerTex)) {
+            std::cout << "Loading texture: " << checkerTex.string() << std::endl;
+            texData = loadPPM(checkerTex);
         } else {
+            std::cout << "No texture files found; using fallback checker" << std::endl;
             texData = makeFallbackChecker();
         }
     } catch (...) {
+        std::cout << "Texture load failed; using fallback checker" << std::endl;
         texData = makeFallbackChecker();
     }
     app_state.texture = new veekay::graphics::Texture(
@@ -830,9 +888,9 @@ void init(VkCommandBuffer cmd) {
     shadowRaster.cullMode = VK_CULL_MODE_BACK_BIT;
     shadowRaster.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
     shadowRaster.depthBiasEnable = VK_TRUE;
-    shadowRaster.depthBiasConstantFactor = 1.25f;
+    shadowRaster.depthBiasConstantFactor = 0.35f;
     shadowRaster.depthBiasClamp = 0.0f;
-    shadowRaster.depthBiasSlopeFactor = 1.75f;
+    shadowRaster.depthBiasSlopeFactor = 0.75f;
 
     VkPipelineMultisampleStateCreateInfo shadowMs{};
     shadowMs.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
@@ -1141,6 +1199,17 @@ void update(double time) {
     ImGui::Text("=== Rendering ===");
     ImGui::Checkbox("Wireframe Mode", &app_state.wireframeMode);
     ImGui::Text("(Show edges/faces)");
+    ImGui::Checkbox("Enable shadows", &app_state.enableShadows);
+    ImGui::Checkbox("Plane casts shadow", &app_state.planeCastsShadow);
+
+    ImGui::Separator();
+    ImGui::Text("=== Fill Light (camera) ===");
+    ImGui::Checkbox("Enable fill light", &app_state.enableFillLight);
+    ImGui::ColorEdit3("Fill color", &app_state.fillLightColor.x);
+    ImGui::SliderFloat("Fill intensity", &app_state.fillLightIntensity, 0.0f, 30.0f);
+    ImGui::SliderFloat("Fill range", &app_state.fillLightRange, 0.0f, 25.0f);
+    ImGui::SliderFloat("Fill forward", &app_state.fillLightForwardOffset, -1.0f, 2.0f);
+    ImGui::SliderFloat("Fill up", &app_state.fillLightUpOffset, -1.0f, 2.0f);
 
     ImGui::Separator();
     ImGui::Text("=== Ambient & Material ===");
@@ -1234,9 +1303,9 @@ void update(double time) {
     projectionMatrix[1][1] *= -1.0f; // flip Y for Vulkan
 
     glm::vec3 lightDir = glm::normalize(-glm::vec3(app_state.dirLight.directionIntensity));
-    glm::vec3 lightPos = lightDir * -8.0f + glm::vec3(0.0f, 6.0f, 0.0f);
+    glm::vec3 lightPos = lightDir * 20.0f;
     glm::mat4 lightView = glm::lookAt(lightPos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-    glm::mat4 lightProj = glm::orthoRH_ZO(-12.0f, 12.0f, -12.0f, 12.0f, 0.1f, 30.0f);
+    glm::mat4 lightProj = glm::orthoRH_ZO(-18.0f, 18.0f, -18.0f, 18.0f, 0.1f, 40.0f);
     lightProj[1][1] *= -1.0f; // flip Y for Vulkan
     glm::mat4 lightSpaceMatrix = lightProj * lightView;
 
@@ -1285,6 +1354,24 @@ void update(double time) {
     for (size_t i = 0; i < pCount; ++i) {
         pointStorage[i] = app_state.pointLights[i];
     }
+
+    // Optional soft point light that follows the camera ("fill light").
+    // Helps keep the front side visible even when shadows reduce directional diffuse.
+    if (app_state.enableFillLight && pCount < static_cast<size_t>(kMaxPointLights)) {
+        glm::vec3 camPos = app_state.camera.getPosition();
+        glm::vec3 camFwd = app_state.camera.getForward();
+        glm::vec3 camUp = app_state.camera.getUp();
+
+        glm::vec3 fillPos = camPos + camFwd * app_state.fillLightForwardOffset + camUp * app_state.fillLightUpOffset;
+        float intensity = std::max(app_state.fillLightIntensity, 0.0f);
+        float range = std::max(app_state.fillLightRange, 0.0f);
+
+        pointStorage[pCount] = PointLightData{
+            glm::vec4(fillPos, intensity),
+            glm::vec4(app_state.fillLightColor, range)
+        };
+        ++pCount;
+    }
     vkMapMemory(veekay::app.vk_device, app_state.pointLightBufferMemory, 0,
                 sizeof(PointLightData) * kMaxPointLights, 0, &data);
     memcpy(data, pointStorage.data(), sizeof(PointLightData) * kMaxPointLights);
@@ -1307,7 +1394,11 @@ void update(double time) {
     vkUnmapMemory(veekay::app.vk_device, app_state.spotLightBufferMemory);
 
     
-    app_state.lightCounts.counts = glm::ivec4(static_cast<int>(pCount), static_cast<int>(sCount), 0, 0);
+    app_state.lightCounts.counts = glm::ivec4(
+        static_cast<int>(pCount),
+        static_cast<int>(sCount),
+        app_state.enableShadows ? 1 : 0,
+        0);
     vkMapMemory(veekay::app.vk_device, app_state.lightCountBufferMemory, 0, sizeof(app_state.lightCounts), 0, &data);
     memcpy(data, &app_state.lightCounts, sizeof(app_state.lightCounts));
     vkUnmapMemory(veekay::app.vk_device, app_state.lightCountBufferMemory);
@@ -1382,12 +1473,17 @@ void render(VkCommandBuffer commandBuffer, VkFramebuffer framebuffer) {
         vkCmdDrawIndexed(commandBuffer, app_state.indexCount, 1, 0, 0, 0);
     }
 
-    VkBuffer shadowPlaneVb[] = {app_state.planeVertexBuffer};
-    vkCmdBindVertexBuffers(commandBuffer, 0, 1, shadowPlaneVb, shadowOffsets);
-    vkCmdBindIndexBuffer(commandBuffer, app_state.planeIndexBuffer, 0, VK_INDEX_TYPE_UINT32);
-    vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, app_state.pipelineLayout, 0, 1, &app_state.descriptorSetPlane, 0, nullptr);
-    if (app_state.planeIndexCount > 0) {
-        vkCmdDrawIndexed(commandBuffer, app_state.planeIndexCount, 1, 0, 0, 0);
+    // Rendering the plane into the shadow map often causes self-shadowing artifacts
+    // (a hard diagonal seam because the plane is only 2 triangles). The plane is mainly
+    // a receiver, not an occluder, so keep it out of the shadow map by default.
+    if (app_state.planeCastsShadow) {
+        VkBuffer shadowPlaneVb[] = {app_state.planeVertexBuffer};
+        vkCmdBindVertexBuffers(commandBuffer, 0, 1, shadowPlaneVb, shadowOffsets);
+        vkCmdBindIndexBuffer(commandBuffer, app_state.planeIndexBuffer, 0, VK_INDEX_TYPE_UINT32);
+        vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, app_state.pipelineLayout, 0, 1, &app_state.descriptorSetPlane, 0, nullptr);
+        if (app_state.planeIndexCount > 0) {
+            vkCmdDrawIndexed(commandBuffer, app_state.planeIndexCount, 1, 0, 0, 0);
+        }
     }
 
     vkCmdEndRendering(commandBuffer);
